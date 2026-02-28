@@ -1,0 +1,14 @@
+includes:
+    - ./vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app/
+
+    level: 4
+
+    excludePaths:
+        - app/Http/Middleware/VerifyCsrfToken.php (?)
+        - app/Console/Kernel (?)
+
+    errorFormat: table
