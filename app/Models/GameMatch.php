@@ -62,7 +62,7 @@ class GameMatch extends Model
 
     public function teams(): HasMany
     {
-        return $this->hasMany(MatchTeam::class);
+        return $this->hasMany(MatchTeam::class, 'match_id');
     }
 
     public function rule(): HasOne
@@ -72,27 +72,27 @@ class GameMatch extends Model
 
     public function scores(): HasMany
     {
-        return $this->hasMany(MatchScore::class);
+        return $this->hasMany(MatchScore::class, 'match_id');
     }
 
     public function disputes(): HasMany
     {
-        return $this->hasMany(MatchDispute::class);
+        return $this->hasMany(MatchDispute::class, 'match_id');
     }
 
     public function cards(): HasMany
     {
-        return $this->hasMany(MatchCard::class);
+        return $this->hasMany(MatchCard::class, 'match_id');
     }
 
     public function reputationEvents(): HasMany
     {
-        return $this->hasMany(ReputationEvent::class);
+        return $this->hasMany(ReputationEvent::class, 'match_id');
     }
 
     public function refereeInvitations(): HasMany
     {
-        return $this->hasMany(RefereeInvitation::class);
+        return $this->hasMany(RefereeInvitation::class, 'match_id');
     }
 
     public function isEditable(): bool
